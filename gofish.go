@@ -1,8 +1,8 @@
 package gofish
 
 import (
-  _ "github.com/go-swagger/go-swagger"
+	_ "github.com/go-swagger/go-swagger"
 
-  _ "github.com/danehans/gofish/client"
-  _ "github.com/danehans/gofish/models"
+	_ "github.com/runner-mei/gofish/client"
+	_ "github.com/runner-mei/gofish/models"
 )

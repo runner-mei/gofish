@@ -15,7 +15,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/danehans/gofish/models"
+	"github.com/runner-mei/gofish/models"
 )
 
 // NewCreateAccountParams creates a new CreateAccountParams object

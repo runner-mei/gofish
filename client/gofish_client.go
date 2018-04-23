@@ -9,7 +9,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/danehans/gofish/client/redfish_v1"
+	"github.com/runner-mei/gofish/client/redfish_v1"
 )
 
 // Default gofish HTTP client.
@@ -27,8 +27,6 @@ func NewHTTPClient(formats strfmt.Registry) *Gofish {
 // New creates a new gofish client
 func New(transport runtime.ClientTransport, formats strfmt.Registry) *Gofish {
 	cli := new(Gofish)
-	cli.Transport = transport
-
 	cli.RedfishV1 = redfish_v1.New(transport, formats)
 
 	return cli
@@ -37,14 +35,9 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Gofish {
 // Gofish is a client for gofish
 type Gofish struct {
 	RedfishV1 *redfish_v1.Client
-
-	Transport runtime.ClientTransport
 }
 
 // SetTransport changes the transport on the client and all its subresources
 func (c *Gofish) SetTransport(transport runtime.ClientTransport) {
-	c.Transport = transport
-
 	c.RedfishV1.SetTransport(transport)
-
 }
